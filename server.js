@@ -8,7 +8,7 @@ const pg = require('pg');
 server.use(cors())   // Middleware function 
 const axios = require('axios');
 const apiKey = process.env.apiKey;
-const client = new pg.Client('postgresql://localhost:5432/test1')
+const client = new pg.Client(process.env.DATABASE_URL)
 server.use(express.json());
 
 server.get('/trending', trending)
